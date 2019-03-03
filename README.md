@@ -10,10 +10,7 @@ Parses the MRZ found of Passport and Travel Documents and returns the data in a 
 
 Example:
 
-```javascript
-var lib = require('./dist/index.js');
-var data = lib.parse('P<CANMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9CAN8501019F2301147<<<<<<<<<<<<<<08');
-```
+
 
 The Result is a javascript object with the decoded information:
 
