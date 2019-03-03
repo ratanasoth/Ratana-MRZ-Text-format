@@ -10,7 +10,7 @@
 <body>
 <script >
 
-    
+
 const mrz = 'P<CANMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9CAN8501019F2301147<<<<<<<<<<<<<<08';
 const faultyMrz = 'G<CANMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9CAN8501019F2301147<<<<<<<<<<<<<<08';
 const maleMrz = 'P<CANMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9CAN8501019M2301147<<<<<<<<<<<<<<08';
@@ -18,20 +18,43 @@ const unknownMrz = 'P<CANMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9CAN850
 const nationalityFailMrz = 'P<UTOMARTIN<<SARAH<<<<<<<<<<<<<<<<<<<<<<<<<<ZE000509<9UTO8501019X2301147<<<<<<<<<<<<<<08';
 
 
-    //alert(parse(mrz));
-
    //alert(_countries["ZWE"]);
    //alert(_checkDigitValues["G"]);
-
-   //alert(parse (mrz));
-   var ratanasoth = parse(mrz);
-   console.log(ratanasoth);
    
-   alert(ratanasoth);
+   
+   var ratanasoth = parse(mrz);
+   alert("Orignal TEXT sample="+ratanasoth["documentNumber"]);
+   console.log(ratanasoth);
+      
+  
+
+   function format_password(){
+
+        document.getElementById("txt_passport_no").value="";
+        var get_txt_passport = document.getElementById("txt_passport").value;
+
+        get_txt_passport = get_txt_passport.replace(/\n/g, "");
 
 
+        alert("TEXT from AREA"+get_txt_passport);
+        //ratanasoth = parse(mrz);
+        var get_p = parse(get_txt_passport);
+        //alert(get_p["documentNumber"]);
+
+        document.getElementById("txt_passport_no").value = get_p["documentNumber"] ;
+
+
+   }
 
  </script>
+
+<form actions="" name="frm_getpass">
+        <textarea onchange="format_password();" name="txt_passport" id="txt_passport" cols="50" rows="5" ></textarea>
+<br>
+
+<input type="text" name="txt_passport_no" id="txt_passport_no">
+
+</form>
 
 </body>
 
